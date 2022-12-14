@@ -1,0 +1,35 @@
+{{>layout/header}}
+
+<h1>Eple</h1>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="/teacher" role="button" class="btn btn-success active">Teacher</a>
+            <a href="/student" class="btn btn-secondary active" role="button">Student</a>
+            <a href="/post/save" class="btn btn-primary" role="button">Posting</a>
+        </div>
+    </div>
+    <br>
+    <table class="table table-hotizontal table-bordered">
+        <thead class="thead-strong">
+        <tr>
+            <th>posting number</th>
+            <th>title</th>
+            <th>author</th>
+            <th>posting date</th>
+        </tr>
+        </thead>
+        <tbody id = "tbody">
+        {{#posts}}
+            <tr>
+                <td>{{id}}</td>
+                <td><a href="/posts/update/{{id}}">{{title}}</a></td>
+                <td>{{author}}</td>
+                <td>{{modifiedDate}}</td>
+            </tr>
+        {{/posts}}
+        </tbody>
+    </table>
+</div>
+
+{{>layout/footer}}
